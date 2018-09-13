@@ -32,6 +32,10 @@ class ViewController: UIViewController {
 
     func holaPulido(){
         //comentario para pulido xd
+        
+        /*
+         * Pulido es bien puton!!!
+         */
     }
     
 
