@@ -10,12 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var player2Label: UILabel!
     @IBOutlet weak var player1Label: UILabel!
     @IBOutlet weak var scorePlayer1: UILabel!
-    @IBOutlet weak var player2Label: UILabel!
     @IBOutlet weak var scorePlayer2: UILabel!
+    
+    @IBOutlet weak var carta11: UIImageView!
+    @IBOutlet weak var carta12: UIImageView!
+    @IBOutlet weak var carta13: UIImageView!
+    
+    
     @IBAction func startButton(_ sender: UIButton) {
+        //startGame()
     }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        print("START GAME")
+    }
+    @IBAction func tapCarta(_ sender: UITapGestureRecognizer) {
+        //var x = UITapGestureRecognizer.
+        if let carta = sender.view {
+            print(carta.accessibilityIdentifier)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,12 +49,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func holaPulido(){
-        //comentario para pulido xd
-        
-        /*
-         * Pulido es bien puton!!!
-         */
+    func startGame(){
+        //Iniciar memorama
     }
     
 
