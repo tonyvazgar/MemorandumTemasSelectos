@@ -191,14 +191,13 @@
                                     <color key="titleColor" red="0.98404495281312887" green="1" blue="0.98722918057218878" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FZB-hg-EG1"/>
-                                    <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wa8-6e-GIG"/>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5b-oV-ewE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="x" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-K0-Myo">
-                                <rect key="frame" x="338" y="556" width="10" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Oz-K0-Myo">
+                                <rect key="frame" x="337" y="540" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
                                 <color key="textColor" red="0.010704812110695072" green="0.34910405662863098" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -210,6 +209,21 @@
                         <outlet property="carta11" destination="9Zh-pF-gtM" id="bQR-NE-SYN"/>
                         <outlet property="carta12" destination="39P-V5-HBy" id="klW-K7-yrg"/>
                         <outlet property="carta13" destination="BJL-Gv-uDu" id="moH-du-oKN"/>
+                        <outlet property="carta21" destination="e4V-Pt-Jt9" id="xu7-Fd-sby"/>
+                        <outlet property="carta22" destination="vKn-jQ-yba" id="ovH-oP-u1d"/>
+                        <outlet property="carta23" destination="9cW-X6-wN2" id="u9c-iK-cYg"/>
+                        <outlet property="carta31" destination="hzE-OY-Kpw" id="ncq-o6-bkr"/>
+                        <outlet property="carta32" destination="K1N-Wx-U4r" id="LmG-vB-hR4"/>
+                        <outlet property="carta33" destination="ZGn-2K-jv1" id="WvF-lO-cJ0"/>
+                        <outlet property="carta41" destination="hcX-hv-OPL" id="f0n-a8-ECo"/>
+                        <outlet property="carta42" destination="f5M-Cu-dNG" id="3f6-Ga-juu"/>
+                        <outlet property="carta43" destination="r6n-CJ-hNZ" id="G2y-hw-oUE"/>
+                        <outlet property="carta51" destination="GXv-7b-X84" id="WbG-Gz-eHX"/>
+                        <outlet property="carta52" destination="ehx-If-ldE" id="7et-6a-N4D"/>
+                        <outlet property="carta53" destination="fpf-EJ-D2O" id="FRp-Le-BUa"/>
+                        <outlet property="carta61" destination="Pzl-4i-eef" id="vus-Wn-n6H"/>
+                        <outlet property="carta62" destination="Ik4-as-Ivq" id="Bjv-iK-G4V"/>
+                        <outlet property="carta63" destination="Hm7-S8-dmH" id="6Jq-YL-X2c"/>
                         <outlet property="player1Label" destination="cwB-7t-bKP" id="FJC-HR-BMY"/>
                         <outlet property="player2Label" destination="Zrv-t8-ZJk" id="xvE-2g-5Im"/>
                         <outlet property="scorePlayer1" destination="1Oz-K0-Myo" id="Hfm-Jd-sP6"/>
@@ -232,21 +246,81 @@
                         <action selector="tapCarta:" destination="BYZ-38-t0r" id="xdA-6h-Uvg"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="XxA-wR-Ke6"/>
-                <tapGestureRecognizer id="npQ-k0-aPd"/>
-                <tapGestureRecognizer id="x7F-C2-gcy"/>
-                <tapGestureRecognizer id="ce0-FA-Syi"/>
-                <tapGestureRecognizer id="ApM-vf-BSF"/>
-                <tapGestureRecognizer id="AM5-Ta-QsV"/>
-                <tapGestureRecognizer id="Gil-AS-R0v"/>
-                <tapGestureRecognizer id="BLc-zN-eOs"/>
-                <tapGestureRecognizer id="PKx-22-VpG"/>
-                <tapGestureRecognizer id="svw-m8-5Oq"/>
-                <tapGestureRecognizer id="AJL-rB-h7m"/>
-                <tapGestureRecognizer id="kmZ-Xl-94j"/>
-                <tapGestureRecognizer id="UPg-r3-NJk"/>
-                <tapGestureRecognizer id="mkk-6R-khN"/>
-                <tapGestureRecognizer id="15G-q6-jvj"/>
+                <tapGestureRecognizer id="XxA-wR-Ke6">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="HBW-vz-oJd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="npQ-k0-aPd">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="4ZC-4s-vcR"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="x7F-C2-gcy">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="bf6-ec-gtm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ce0-FA-Syi">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="hb4-OI-Qdu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ApM-vf-BSF">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="NXw-uo-D7K"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="AM5-Ta-QsV">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="b23-wH-3qF"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Gil-AS-R0v">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="MuB-93-CZt"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="BLc-zN-eOs">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="m7i-Ws-e0e"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="PKx-22-VpG">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="cqB-5v-QSd"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="svw-m8-5Oq">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="2Xm-YD-ao5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="AJL-rB-h7m">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="bWg-BI-Xs3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="kmZ-Xl-94j">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="z5k-wt-lLM"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="UPg-r3-NJk">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="zXm-Z3-mpn"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mkk-6R-khN">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="IyV-T8-2Ma"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="15G-q6-jvj">
+                    <connections>
+                        <action selector="tapCarta:" destination="BYZ-38-t0r" id="gth-s0-sq6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="135.19999999999999" y="131.78410794602701"/>
         </scene>
