@@ -2,7 +2,11 @@
 //  ViewController.swift
 //  Memorama
 //
-//  Created by Tony Vazgar on 9/12/18.
+//  Created by Tony Vazgar
+//             Luis Alberto Flores Sanchez
+//             Victor Eduardo Pulido Contreras
+//             Carlos Eduardo Castelan Vazquez
+//             on 9/12/18.
 //  Copyright © 2018 CLTP. All rights reserved.
 //
 
