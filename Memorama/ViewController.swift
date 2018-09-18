@@ -20,13 +20,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var scorePlayer2: UILabel!
     
     var turn_P1 = false
+    var finale = false
     var tap_count = 0
     var prev_image : UIImageView!
+    var current_image : UIImageView!
     var prev_str_img : String!
     var score_P1 = 0
     var score_P2 = 0
     
-    var all_images = ["tenis", "tenis", "negero", "negero"]
+    var all_images = ["1", "2", "2", "1", "3", "3"]
     var images = [String]()
     
     @IBOutlet weak var carta11: UIImageView!
@@ -53,19 +55,45 @@ class ViewController: UIViewController {
         return prev_image == current_image
     }
     
-    func turnImages(prev_image: UIImageView, current_image: UIImageView) {
-        prev_image.image = UIImage(named: "Back")
-        current_image.image = UIImage(named: "Back")
+    func wait(turn_images: Bool) {
+        /*let delay = 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(delay), execute: {
+            if turn_images {
+                self.turnImages()
+            } else {
+                self.disableImages()
+            }
+        })*/
+        if turn_images {
+            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(turnImages), userInfo: nil, repeats: false)
+        } else {
+            _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(disableImages), userInfo: nil, repeats: false)
+        }
     }
-    @objc func disableImages(prev_image: UIImageView, current_image: UIImageView) {
-        prev_image.isHidden = true
-        current_image.isHidden = true
+    
+    @objc func turnImages() {
+        self.prev_image.image = UIImage(named: "Back")
+        self.current_image.image = UIImage(named: "Back")
+        
+    }
+    @objc func disableImages() {
+        self.prev_image.isHidden = true
+        self.current_image.isHidden = true
+    }
+    
+    func checkFinale() -> Bool {
+        return carta11.isHidden && carta12.isHidden && carta13.isHidden
+        && carta21.isHidden && carta22.isHidden && carta23.isHidden
+        && carta31.isHidden && carta32.isHidden && carta33.isHidden
+        && carta41.isHidden && carta42.isHidden && carta43.isHidden
+        && carta51.isHidden && carta52.isHidden && carta53.isHidden
+        && carta61.isHidden && carta62.isHidden && carta63.isHidden
     }
     
     
     
     @IBAction func startGame(_ sender: UIButton) {
-        all_images = ["tenis", "tenis", "negero", "negero"]
+        all_images = ["1", "2", "2", "1", "3", "3"]
         images = [String]()
         print("START GAME")
     }
@@ -77,17 +105,14 @@ class ViewController: UIViewController {
                 carta11.image = UIImage(named: images[0])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[0]){
                     print("good 1 pair")
-                    
-                    disableImages(prev_image: prev_image, current_image: carta11)
+                    current_image = carta11
+                    wait(turn_images: false)
                     tap_count = 0
-                    score_P1 += 1
-                    print(score_P1)
-                    scorePlayer1.text = String(score_P1)
                 } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_str_img, current_image: images[0]){
                     print("change of player")
-                    turnImages(prev_image: prev_image, current_image: carta11)
+                    current_image = carta11
+                    wait(turn_images: true)
                     tap_count = 0
-                    
                 } else {
                     prev_image = carta11
                     prev_str_img = images[0]
@@ -97,16 +122,14 @@ class ViewController: UIViewController {
                 carta12.image = UIImage(named: images[1])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[1]){
                     print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: carta12)
+                    current_image = carta12
+                    wait(turn_images: false)
                     tap_count = 0
-                    score_P1 += 1
-                    print(score_P1)
-                    scorePlayer1.text = String(score_P1)
                 } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_str_img, current_image: images[1]){
                     print("change of player")
-                    turnImages(prev_image: prev_image, current_image: carta12)
+                    current_image = carta12
+                    wait(turn_images: true)
                     tap_count = 0
-                    
                 } else {
                     prev_image = carta12
                     prev_str_img = images[1]
@@ -116,14 +139,13 @@ class ViewController: UIViewController {
                 carta13.image = UIImage(named: images[2])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[2]){
                     print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: carta13)
+                    current_image = carta13
+                    wait(turn_images: false)
                     tap_count = 0
-                    score_P1 += 1
-                    print(score_P1)
-                    scorePlayer1.text = String(score_P1)
                 } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_str_img, current_image: images[2]){
                     print("change of player")
-                    turnImages(prev_image: prev_image, current_image: carta13)
+                    current_image = carta13
+                    wait(turn_images: true)
                     tap_count = 0
                     
                 } else {
@@ -135,71 +157,38 @@ class ViewController: UIViewController {
                 carta21.image = UIImage(named: images[3])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[3]){
                     print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: carta21)
+                    current_image = carta21
+                    wait(turn_images: false)
                     tap_count = 0
-                    score_P1 += 1
-                    print(score_P1)
-                    scorePlayer1.text = String(score_P1)
                 } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_str_img, current_image: images[3]){
                     print("change of player")
-                    turnImages(prev_image: prev_image, current_image: carta21)
+                    current_image = carta21
+                    wait(turn_images: true)
                     tap_count = 0
                     
                 } else {
                     prev_image = carta21
                     prev_str_img = images[3]
                     tap_count += 1
+                } 
+            } else if carta == carta22 {
+                carta22.image = UIImage(named: images[4])
+                if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[4]){
+                    print("good 1 pair")
+                    current_image = carta22
+                    wait(turn_images: false)
+                    tap_count = 0
+                } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_str_img, current_image: images[4]){
+                    print("change of player")
+                    current_image = carta22
+                    wait(turn_images: true)
+                    tap_count = 0
+                } else {
+                    prev_image = carta22
+                    prev_str_img = images[4]
+                    tap_count += 1
                 }
             }
-            
-            
-            /*if carta == carta12 {
-                carta12.image = UIImage(named: images[1])
-                if tap_count == 1 && checkAreTheSame(prev_image: prev_image, current_image: 1){
-                    print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: 1)
-                    tap_count = 0
-                } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_image, current_image: 1){
-                    print("change of player")
-                    turnImages(prev_image: prev_image, current_image: 1)
-                    tap_count = 0
-                } else {
-                    prev_image = 1
-                    tap_count += 1
-                }
-                
-            } else if carta == carta13 {
-                carta13.image = UIImage(named: images[2])
-                if tap_count == 1 && checkAreTheSame(prev_image: prev_image, current_image: 2){
-                    print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: 2)
-                    tap_count = 0
-                } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_image, current_image: 2){
-                    print("change of player")
-                    turnImages(prev_image: prev_image, current_image: 2)
-                    tap_count = 0
-                } else {
-                    prev_image = 2
-                    tap_count += 1
-                }
-                
-            } else if carta == carta21 {
-                carta21.image = UIImage(named: images[3])
-                if tap_count == 1 && checkAreTheSame(prev_image: prev_image, current_image: 3){
-                    print("good 1 pair")
-                    disableImages(prev_image: prev_image, current_image: 3)
-                    tap_count = 0
-                } else if tap_count == 1 && !checkAreTheSame(prev_image: prev_image, current_image: 3){
-                    print("change of player")
-                    turnImages(prev_image: prev_image, current_image: 3)
-                    tap_count = 0
-                } else {
-                    prev_image = 3
-                    tap_count += 1
-                }
-                
-            }*/
-            //print(carta.accessibilityIdentifier)
         }
     }
     
@@ -224,11 +213,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func startGame(){
-        //Iniciar memorama
-    }
-    
 
 }
 
