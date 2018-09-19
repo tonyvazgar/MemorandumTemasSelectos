@@ -102,13 +102,10 @@ class ViewController: UIViewController {
             all_images.remove(at: rand)
         }
         
-        let alertController = UIAlertController(title: "START GAME", message:
-            "Memorandum", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
-        self.present(alertController, animated: true, completion: nil)
         resetCards()
         buttonStart.isHidden = true
         player2Label.isHidden = true
+        player1Label.isHidden = false
     }
     
     func checkTap(card: UIImageView, num_card: Int) {
