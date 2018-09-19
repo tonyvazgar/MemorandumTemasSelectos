@@ -190,9 +190,8 @@
                                 <color key="textColor" red="0.010704812110695072" green="0.34910405662863098" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-Vk-8P0">
-                                <rect key="frame" x="310" y="321" width="60" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-Vk-8P0">
+                                <rect key="frame" x="157.5" y="315" width="60" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="0.98404495281312887" green="1" blue="0.98722918057218878" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
@@ -201,11 +200,26 @@
                                     <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U5b-oV-ewE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FII-iy-ztF">
+                                <rect key="frame" x="322" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RESET">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07f-CV-rFk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.74523098950050648" green="0.83438113915342638" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="IKO-Vk-8P0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="DAv-fj-XLi"/>
+                            <constraint firstItem="IKO-Vk-8P0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ig7-rP-hEe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonStart" destination="IKO-Vk-8P0" id="vrS-oP-f0R"/>
                         <outlet property="carta11" destination="9Zh-pF-gtM" id="bQR-NE-SYN"/>
                         <outlet property="carta12" destination="39P-V5-HBy" id="klW-K7-yrg"/>
                         <outlet property="carta13" destination="BJL-Gv-uDu" id="moH-du-oKN"/>
@@ -226,6 +240,7 @@
                         <outlet property="carta63" destination="Hm7-S8-dmH" id="6Jq-YL-X2c"/>
                         <outlet property="player1Label" destination="cwB-7t-bKP" id="FJC-HR-BMY"/>
                         <outlet property="player2Label" destination="Zrv-t8-ZJk" id="xvE-2g-5Im"/>
+                        <outlet property="resetButton" destination="FII-iy-ztF" id="ses-PN-uh1"/>
                         <outlet property="scorePlayer1" destination="1Oz-K0-Myo" id="Hfm-Jd-sP6"/>
                         <outlet property="scorePlayer2" destination="OgN-WP-i3z" id="2Z0-JM-qFb"/>
                     </connections>

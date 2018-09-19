@@ -49,8 +49,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var carta61: UIImageView!
     @IBOutlet weak var carta62: UIImageView!
     @IBOutlet weak var carta63: UIImageView!
+    @IBOutlet weak var buttonStart: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
     
-   
+    @IBAction func resetTap(_ sender: UIButton) {
+        turn_P1 = true
+        all_images = ["1", "2", "2", "1", "3", "3", "4", "4"]
+        images = [String]()
+        
+        for _ in 0..<all_images.count {
+            let rand = Int(arc4random_uniform(UInt32(all_images.count)))
+            images.append(all_images[rand])
+            all_images.remove(at: rand)
+        }
+        let alertController = UIAlertController(title: "NEW GAME", message:
+            "Memorandum", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+        resetCards()
+    }
     
     func checkAreTheSame(prev_image: String, current_image: String) -> Bool {
         var result = false
@@ -108,6 +125,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func startGame(_ sender: UIButton) {
+        resetButton.isHidden = false
         turn_P1 = true
         all_images = ["1", "2", "2", "1", "3", "3", "4", "4"]
         images = [String]()
@@ -122,8 +140,7 @@ class ViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
         resetCards()
-
-        
+        buttonStart.isHidden = true
     }
     
     @IBAction func tapCarta(_ sender: UITapGestureRecognizer) {
@@ -327,6 +344,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resetButton.isHidden = true
         turn_P1 = true
         // Do any additional setup after loading the view, typically from a nib.
         player1Label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
