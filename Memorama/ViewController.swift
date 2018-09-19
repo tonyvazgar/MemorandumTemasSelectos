@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var prev_str_img : String!
     var score_P1 = 0
     var score_P2 = 0
-    
+    var image_array: Array<UIImageView> = Array()
     var all_images = ["1", "2", "2", "1", "3", "3", "4", "4"]
     var images = [String]()
     
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var carta61: UIImageView!
     @IBOutlet weak var carta62: UIImageView!
     @IBOutlet weak var carta63: UIImageView!
-    var image_array: Array<UIImageView> = Array()
+    
    
     
     func checkAreTheSame(prev_image: String, current_image: String) -> Bool {
@@ -158,6 +158,13 @@ class ViewController: UIViewController {
                 carta12.image = UIImage(named: images[1])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[1]){
                     print("good 1 pair")
+                    if turn_P1 == false {
+                        score_P2 += 1
+                    } else {
+                        score_P1 += 1
+                    }
+                    print("Score P2 \(score_P2)")
+                    print("Score P1 \(score_P1)")
                     current_image = carta12
                     wait(turn_images: false)
                     tap_count = 0
@@ -176,6 +183,13 @@ class ViewController: UIViewController {
                 carta13.image = UIImage(named: images[2])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[2]){
                     print("good 1 pair")
+                    if turn_P1 == false {
+                        score_P2 += 1
+                    } else {
+                        score_P1 += 1
+                    }
+                    print("Score P2 \(score_P2)")
+                    print("Score P1 \(score_P1)")
                     current_image = carta13
                     wait(turn_images: false)
                     tap_count = 0
@@ -195,6 +209,13 @@ class ViewController: UIViewController {
                 carta21.image = UIImage(named: images[3])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[3]){
                     print("good 1 pair")
+                    if turn_P1 == false {
+                        score_P2 += 1
+                    } else {
+                        score_P1 += 1
+                    }
+                    print("Score P2 \(score_P2)")
+                    print("Score P1 \(score_P1)")
                     current_image = carta21
                     wait(turn_images: false)
                     tap_count = 0
@@ -214,6 +235,13 @@ class ViewController: UIViewController {
                 carta22.image = UIImage(named: images[4])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[4]){
                     print("good 1 pair")
+                    if turn_P1 == false {
+                        score_P2 += 1
+                    } else {
+                        score_P1 += 1
+                    }
+                    print("Score P2 \(score_P2)")
+                    print("Score P1 \(score_P1)")
                     current_image = carta22
                     wait(turn_images: false)
                     tap_count = 0
@@ -232,6 +260,13 @@ class ViewController: UIViewController {
                 carta23.image = UIImage(named: images[5])
                 if tap_count == 1 && checkAreTheSame(prev_image: prev_str_img, current_image: images[5]){
                     print("good 1 pair")
+                    if turn_P1 == false {
+                        score_P2 += 1
+                    } else {
+                        score_P1 += 1
+                    }
+                    print("Score P2 \(score_P2)")
+                    print("Score P1 \(score_P1)")
                     current_image = carta23
                     wait(turn_images: false)
                     tap_count = 0
@@ -276,6 +311,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        turn_P1 = true
         // Do any additional setup after loading the view, typically from a nib.
         player1Label.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
         scorePlayer1.transform = CGAffineTransform(rotationAngle: -CGFloat.pi/2)
