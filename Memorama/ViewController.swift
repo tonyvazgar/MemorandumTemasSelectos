@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     var score_P1 = 0
     var score_P2 = 0
     
-    
     var all_images = ["1", "2", "2", "1", "3", "3", "4", "4"]
     var images = [String]()
     
@@ -46,9 +45,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var carta61: UIImageView!
     @IBOutlet weak var carta62: UIImageView!
     @IBOutlet weak var carta63: UIImageView!
-    
+    var image_array: Array<UIImageView> = Array()
+   
     
     func checkAreTheSame(prev_image: String, current_image: String) -> Bool {
+        var result = false
+        print(prev_image + "previa")
+        print(current_image + "el current")
+        
+        if prev_image == current_image {
+            result = true
+        } else if current_image == current_image || prev_image == prev_image {
+            result = false
+        }
+        print(result)
+        return result
+    }
+    
+    func checkAreTheSame2(prev_image: String, current_image: String) -> Bool {
         return prev_image == current_image
     }
     
@@ -93,6 +107,7 @@ class ViewController: UIViewController {
         turn_P1 = true
         all_images = ["1", "2", "2", "1", "3", "3", "4", "4"]
         images = [String]()
+        
         for _ in 0..<all_images.count {
             let rand = Int(arc4random_uniform(UInt32(all_images.count)))
             images.append(all_images[rand])
@@ -102,6 +117,8 @@ class ViewController: UIViewController {
             "Memorandum", preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
+        resetCards()
+
         
     }
     
@@ -245,6 +262,13 @@ class ViewController: UIViewController {
     }
     }*/
     
+    func resetCards() {
+        image_array = [carta11, carta12, carta13, carta21, carta22, carta23, carta31, carta32, carta33, carta41, carta42, carta43, carta51, carta52, carta53, carta61, carta62, carta63]
+        for carta in image_array{
+            carta.isHidden = false
+            carta.image = UIImage(named: "Back")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
