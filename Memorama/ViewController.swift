@@ -140,6 +140,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta11
                     wait(turn_images: false)
                     tap_count = 0
@@ -165,6 +167,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta12
                     wait(turn_images: false)
                     tap_count = 0
@@ -190,6 +194,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta13
                     wait(turn_images: false)
                     tap_count = 0
@@ -216,6 +222,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta21
                     wait(turn_images: false)
                     tap_count = 0
@@ -242,6 +250,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta22
                     wait(turn_images: false)
                     tap_count = 0
@@ -267,6 +277,8 @@ class ViewController: UIViewController {
                     }
                     print("Score P2 \(score_P2)")
                     print("Score P1 \(score_P1)")
+                    scorePlayer1.text = String(score_P1)
+                    scorePlayer2.text = String(score_P2)
                     current_image = carta23
                     wait(turn_images: false)
                     tap_count = 0
@@ -307,6 +319,10 @@ class ViewController: UIViewController {
             carta.isHidden = false
             carta.image = UIImage(named: "Back")
         }
+        score_P1 = 0
+        score_P2 = 0
+        scorePlayer1.text = String(score_P1)
+        scorePlayer2.text = String(score_P2)
     }
     
     override func viewDidLoad() {
@@ -322,6 +338,10 @@ class ViewController: UIViewController {
             let rand = Int(arc4random_uniform(UInt32(all_images.count)))
             images.append(all_images[rand])
             all_images.remove(at: rand)
+        }
+        image_array = [carta11, carta12, carta13, carta21, carta22, carta23, carta31, carta32, carta33, carta41, carta42, carta43, carta51, carta52, carta53, carta61, carta62, carta63]
+        for carta in image_array{
+            carta.isHidden = true
         }
         
     }
