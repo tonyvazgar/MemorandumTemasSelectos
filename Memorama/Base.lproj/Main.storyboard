@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -177,7 +177,7 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKO-Vk-8P0">
-                                <rect key="frame" x="157.5" y="315" width="60" height="36"/>
+                                <rect key="frame" x="157.5" y="315.5" width="60" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="0.98404495281312887" green="1" blue="0.98722918057218878" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
@@ -220,29 +220,29 @@
                     </view>
                     <connections>
                         <outlet property="buttonStart" destination="IKO-Vk-8P0" id="vrS-oP-f0R"/>
-                        <outlet property="carta11" destination="9Zh-pF-gtM" id="bQR-NE-SYN"/>
-                        <outlet property="carta12" destination="39P-V5-HBy" id="klW-K7-yrg"/>
-                        <outlet property="carta13" destination="BJL-Gv-uDu" id="moH-du-oKN"/>
-                        <outlet property="carta21" destination="e4V-Pt-Jt9" id="xu7-Fd-sby"/>
-                        <outlet property="carta22" destination="vKn-jQ-yba" id="ovH-oP-u1d"/>
-                        <outlet property="carta23" destination="9cW-X6-wN2" id="u9c-iK-cYg"/>
-                        <outlet property="carta31" destination="hzE-OY-Kpw" id="ncq-o6-bkr"/>
-                        <outlet property="carta32" destination="K1N-Wx-U4r" id="LmG-vB-hR4"/>
-                        <outlet property="carta33" destination="ZGn-2K-jv1" id="WvF-lO-cJ0"/>
-                        <outlet property="carta41" destination="hcX-hv-OPL" id="f0n-a8-ECo"/>
-                        <outlet property="carta42" destination="f5M-Cu-dNG" id="3f6-Ga-juu"/>
-                        <outlet property="carta43" destination="r6n-CJ-hNZ" id="G2y-hw-oUE"/>
-                        <outlet property="carta51" destination="GXv-7b-X84" id="WbG-Gz-eHX"/>
-                        <outlet property="carta52" destination="ehx-If-ldE" id="7et-6a-N4D"/>
-                        <outlet property="carta53" destination="fpf-EJ-D2O" id="FRp-Le-BUa"/>
-                        <outlet property="carta61" destination="Pzl-4i-eef" id="vus-Wn-n6H"/>
-                        <outlet property="carta62" destination="Ik4-as-Ivq" id="Bjv-iK-G4V"/>
-                        <outlet property="carta63" destination="Hm7-S8-dmH" id="6Jq-YL-X2c"/>
                         <outlet property="player1Label" destination="cwB-7t-bKP" id="FJC-HR-BMY"/>
                         <outlet property="player2Label" destination="Zrv-t8-ZJk" id="xvE-2g-5Im"/>
                         <outlet property="resetButton" destination="FII-iy-ztF" id="ses-PN-uh1"/>
                         <outlet property="scorePlayer1" destination="1Oz-K0-Myo" id="Hfm-Jd-sP6"/>
                         <outlet property="scorePlayer2" destination="OgN-WP-i3z" id="2Z0-JM-qFb"/>
+                        <outletCollection property="cards" destination="9Zh-pF-gtM" collectionClass="NSMutableArray" id="YwF-5t-nrI"/>
+                        <outletCollection property="cards" destination="39P-V5-HBy" collectionClass="NSMutableArray" id="C5I-TD-mJE"/>
+                        <outletCollection property="cards" destination="BJL-Gv-uDu" collectionClass="NSMutableArray" id="Pgr-vp-qlh"/>
+                        <outletCollection property="cards" destination="e4V-Pt-Jt9" collectionClass="NSMutableArray" id="bBC-f8-rXv"/>
+                        <outletCollection property="cards" destination="vKn-jQ-yba" collectionClass="NSMutableArray" id="tvu-G8-baI"/>
+                        <outletCollection property="cards" destination="9cW-X6-wN2" collectionClass="NSMutableArray" id="gWQ-oy-NAr"/>
+                        <outletCollection property="cards" destination="hzE-OY-Kpw" collectionClass="NSMutableArray" id="IgM-MH-9Nl"/>
+                        <outletCollection property="cards" destination="K1N-Wx-U4r" collectionClass="NSMutableArray" id="Yzi-Ef-326"/>
+                        <outletCollection property="cards" destination="ZGn-2K-jv1" collectionClass="NSMutableArray" id="8uH-mb-Ygu"/>
+                        <outletCollection property="cards" destination="hcX-hv-OPL" collectionClass="NSMutableArray" id="c5D-YB-e2K"/>
+                        <outletCollection property="cards" destination="f5M-Cu-dNG" collectionClass="NSMutableArray" id="BtH-fS-JH7"/>
+                        <outletCollection property="cards" destination="r6n-CJ-hNZ" collectionClass="NSMutableArray" id="DdF-6i-deB"/>
+                        <outletCollection property="cards" destination="GXv-7b-X84" collectionClass="NSMutableArray" id="oIH-6o-Wc6"/>
+                        <outletCollection property="cards" destination="ehx-If-ldE" collectionClass="NSMutableArray" id="5L2-TK-a1C"/>
+                        <outletCollection property="cards" destination="fpf-EJ-D2O" collectionClass="NSMutableArray" id="4gg-pZ-ejv"/>
+                        <outletCollection property="cards" destination="Pzl-4i-eef" collectionClass="NSMutableArray" id="0bq-vt-Nnr"/>
+                        <outletCollection property="cards" destination="Ik4-as-Ivq" collectionClass="NSMutableArray" id="0gt-CC-1wt"/>
+                        <outletCollection property="cards" destination="Hm7-S8-dmH" collectionClass="NSMutableArray" id="6rA-Ra-jgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -341,6 +341,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="400" height="581"/>
+        <image name="Back" width="300" height="435.75"/>
     </resources>
 </document>
