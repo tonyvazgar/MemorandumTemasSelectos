@@ -156,7 +156,7 @@ class ViewController: UIViewController {
             }
         }
         
-        if checkFinale(){
+        if checkFinale() {
             if score_P1 > score_P2 {
                 showWhoWins(who: "Player 1 Wins", score: score_P1)
             } else {
