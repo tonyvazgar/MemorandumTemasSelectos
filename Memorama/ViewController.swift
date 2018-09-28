@@ -96,9 +96,9 @@ class ViewController: UIViewController {
     }
     
     func showWhoWins(who: String, score: Int) {
-        let alertController = UIAlertController(title: "Player 1 Wins", message:
-            "Gano con \(score) puntos", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        let alertController = UIAlertController(title: who, message:
+            "Gano con \(score) puntos", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -116,7 +116,6 @@ class ViewController: UIViewController {
     
     @IBAction func startGame(_ sender: UIButton) {
         let nameAllImages = "1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9"
-        resetButton.isHidden = false
         turn_P1 = true
         oneImageFaceUp = false
         all_images = nameAllImages.components(separatedBy: ",")
@@ -131,6 +130,7 @@ class ViewController: UIViewController {
         }
         
         resetBoard()
+        resetButton.isHidden = false
         buttonStart.isHidden = true
         player2Label.isHidden = true
         player1Label.isHidden = false
