@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     
     func showWhoWins(who: String, score: Int) {
         let alertController = UIAlertController(title: who, message:
-            "Gano con \(score) puntos", preferredStyle: UIAlertController.Style.alert)
+            "Wins whit \(score) points", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
